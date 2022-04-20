@@ -36,6 +36,10 @@ class MainActivity : AppCompatActivity() {
             for(fruta in it){
                 Log.d("FRUTA", fruta.nombreFruta)
             }
+
+            for((index, value) in it.withIndex()){
+                Log.d("FRUTA $index", value.nombreFruta)
+            }
         })
     }
 }

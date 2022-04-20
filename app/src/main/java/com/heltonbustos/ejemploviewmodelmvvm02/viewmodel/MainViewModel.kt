@@ -11,20 +11,16 @@ class MainViewModel: ViewModel() {
     private val lista: MutableLiveData<List<Frutas>> = MutableLiveData()
     private val interactor = FrutasInteractor()
 
-    fun setListData(listaFrutas: List<Frutas>){
-        lista.value = listaFrutas
-    }
-
     fun getListaData(): LiveData<List<Frutas>>{
         return lista
     }
 
     fun cargarFrutas1ROOM(){
-        setListData(interactor.obtenerFrutasROOM())
+        lista.value = interactor.obtenerFrutasROOM()
     }
 
     fun cargarFrutas2RETROFIT(){
-        setListData(interactor.obtenerFrutasAPIRETROFIT())
+        lista.value = interactor.obtenerFrutasAPIRETROFIT()
     }
 
 }
